@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Project Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Project Registration</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error" id="nameError">Please enter your name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department *</label>
+                <select id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="IT">IT</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="MECH">MECH</option>
+                    <option value="CIVIL">CIVIL</option>
+                </select>
+                <div class="error" id="departmentError">Please select a department</div>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year *</label>
+                <select id="year" name="year" required>
+                    <option value="">Select Year</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+                <div class="error" id="yearError">Please select your year</div>
+            </div>
+
+            <div class="form-group">
+                <label for="projectTitle">Project Title *</label>
+                <input type="text" id="projectTitle" name="projectTitle" required>
+                <div class="error" id="projectTitleError">Please enter your project title</div>
+            </div>
+
+            <div class="form-group">
+                <label for="projectDescription">Project Description</label>
+                <textarea id="projectDescription" name="projectDescription" rows="4" placeholder="Brief description of your project..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="teamSize">Team Size *</label>
+                <select id="teamSize" name="teamSize" required>
+                    <option value="">Select Team Size</option>
+                    <option value="1">Individual</option>
+                    <option value="2">2 Members</option>
+                    <option value="3">3 Members</option>
+                    <option value="4">4 Members</option>
+                    <option value="5+">5+ Members</option>
+                </select>
+                <div class="error" id="teamSizeError">Please select team size</div>
+            </div>
+
+            <div class="form-group">
+                <label for="projectType">Project Type *</label>
+                <select id="projectType" name="projectType" required>
+                    <option value="">Select Project Type</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile App">Mobile App</option>
+                    <option value="AI/ML">AI/ML</option>
+                    <option value="IoT">IoT</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Blockchain">Blockchain</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div class="error" id="projectTypeError">Please select project type</div>
+            </div>
+
+            <div class="form-group">
+                <label for="githubLink">GitHub Repository Link</label>
+                <input type="url" id="githubLink" name="githubLink" placeholder="https://github.com/username/project">
+                <div class="error" id="githubLinkError">Please enter a valid GitHub URL</div>
+            </div>
+
+            <div class="form-group">
+                <label for="presentationDate">Presentation Date</label>
+                <input type="date" id="presentationDate" name="presentationDate">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I agree to the terms and conditions *
+                </label>
+                <div class="error" id="termsError">Please accept the terms and conditions</div>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    Subscribe to newsletter for updates
+                </label>
+            </div>
+
+            <button type="submit" id="submitBtn">
+                <span class="btn-text">Register Project</span>
+                <span class="loading" style="display: none;">Processing...</span>
+            </button>
+        </form>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            <h3>Registration Successful!</h3>
+            <p>Your project has been registered successfully. You will receive a confirmation email shortly.</p>
+        </div>
+
+        <div class="project-stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalProjects">0</span>
+                <span class="stat-label">Total Projects</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="totalStudents">0</span>
+                <span class="stat-label">Students Registered</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
